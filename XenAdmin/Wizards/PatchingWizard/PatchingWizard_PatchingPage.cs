@@ -449,6 +449,23 @@ namespace XenAdmin.Wizards.PatchingWizard
             panel1.Visible = true;
         }
 
+        /// <summary>
+        /// Live patching is attempted for a host if the LivePatchCodesByHost contains the LIVEPATCH_COMPLETE value for that host
+        /// </summary>
+        /// <param name="host"></param>
+        /// <returns></returns>
+        private bool LivePatchingAttemptedForHost(Host host)
+        {
+            return LivePatchCodesByHost != null && LivePatchCodesByHost.ContainsKey(host.uuid) &&
+                   LivePatchCodesByHost[host.uuid] == LivePatchCode.PATCH_PRECHECK_LIVEPATCH_COMPLETE;
+
+        }
+
+        /// <summary>
+        /// Live patching has failed for a host if that host has a patch requiring a reboot and we expected it to live patch
+        /// </summary>
+        /// <param name="host"></param>
+        /// <returns></returns>
         private bool LivePatchingFailedForHost(Host host)
         {
             return host.patches_requiring_reboot.Any();
@@ -463,10 +480,9 @@ namespace XenAdmin.Wizards.PatchingWizard
             // Live patching failed is per-host
             var livePatchingFailedHosts = new List<Host>();
 
-            // TODO: need to iterate through machines expecting to live patch, not all hosts (Gabor's change)
             foreach (var host in SelectedMasters)
             {
-                if (LivePatchingFailedForHost(host))
+                if (LivePatchingAttemptedForHost(host) && LivePatchingFailedForHost(host))
                 {
                     livePatchingFailedHosts.Add(host);
                 }
