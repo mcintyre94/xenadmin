@@ -12963,4 +12963,13 @@ To learn more about the [XenServer] Active Directory feature or to start a [XenS
   <data name="LIVE_PATCHING" xml:space="preserve">
     <value>Live Patching</value>
   </data>
+  <data name="LIVE_PATCHING" xml:space="preserve">
+    <value>Live Patching</value>
+  </data>
+  <data name="LIVE_PATCHING_FAILED_MULTI_HOST" xml:space="preserve">
+    <value>Live patching failed for hosts {0} and they will need to be restarted manually</value>
+  </data>
+  <data name="LIVE_PATCHING_FAILED_ONE_HOST" xml:space="preserve">
+    <value>Live patching failed for host '{0}' and it will need to be restarted manually.</value>
+  </data>
 </root>
