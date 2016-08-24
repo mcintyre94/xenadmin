@@ -44,6 +44,7 @@ using XenAdmin.Dialogs;
 using XenAdmin.Wizards.PatchingWizard.PlanActions;
 using XenAPI;
 using XenAdmin.Actions;
+using XenAdmin.Core;
 
 namespace XenAdmin.Wizards.PatchingWizard
 {
@@ -462,13 +463,28 @@ namespace XenAdmin.Wizards.PatchingWizard
         }
 
         /// <summary>
-        /// Live patching has failed for a host if that host has a patch requiring a reboot and we expected it to live patch
+        /// Live patching has failed for a host if that host requires a reboot for this patch, and we expected to live patch
         /// </summary>
         /// <param name="host"></param>
         /// <returns></returns>
         private bool LivePatchingFailedForHost(Host host)
         {
-            return host.patches_requiring_reboot.Any();
+            if (!host.patches_requiring_reboot.Any())
+            {
+                return false;
+            }
+
+            foreach (var patchRef in host.patches_requiring_reboot)
+            {
+                var poolPatch = host.Connection.Resolve(patchRef);
+                if (poolPatch.uuid.Equals(Patch.uuid))
+                {
+                    // This patch failed
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void FinishedSuccessfully()
