@@ -53,12 +53,11 @@ function check_deps ()
   fi
 }
 
-check_deps nunit-console.exe zip unzip mkisofs wget curl hg git patch mt.exe candle.exe light.exe
+check_deps nunit-console.exe zip unzip mkisofs wget curl hg git patch mt.exe candle.exe light.exe ncover
 if [ "${BUILD_KIND:+$BUILD_KIND}" != production ]
 then
     check_deps signtool.exe
 fi
-
 
 if [ -v DEBUG ];
 then
@@ -68,23 +67,27 @@ fi
 
 set -e
 
-XENADMIN_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+XENADMIN_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )" 
 
 source ${XENADMIN_DIR}/mk/declarations.sh
 
 if test -z "${XC_BRANDING}"; then XC_BRANDING=citrix; fi
 
-git ls-remote git://hg.uk.xensource.com/carbon/${XS_BRANCH}/xenadmin-branding.git &>-
-if [ "$?" -eq 0 ]; then
-  if [ -d "xenadmin-branding" ]
-    then
-      rm -rf xenadmin-branding 
-  fi
-  git clone git://hg.uk.xensource.com/carbon/${XS_BRANCH}/xenadmin-branding.git
-  if [ -d ${BRAND_REPO}/${XC_BRANDING} ]; then
-	echo "Overwriting Branding folder"
-	cp -rf ${BRAND_REPO}/${XC_BRANDING}/* ${REPO}/Branding/
-  fi
+rm -rf ${ROOT}/xenadmin-branding
+
+BRAND_REMOTE=https://code.citrite.net/scm/xsc/xenadmin-branding.git
+
+if [ -z $(git ls-remote --heads ${BRAND_REMOTE} | grep ${XS_BRANCH}) ] ; then
+    echo "Branch ${XS_BRANCH} not found on xenadmin-branding.git. Reverting to master."
+    git clone -b master ${BRAND_REMOTE} ${ROOT}/xenadmin-branding
+else
+    git clone -b ${XS_BRANCH} ${BRAND_REMOTE} ${ROOT}/xenadmin-branding
+fi
+
+if [ -d ${ROOT}/xenadmin-branding/${XC_BRANDING} ]; then
+    echo "Overwriting Branding folder"
+    rm -rf ${XENADMIN_DIR}/Branding/*
+    cp -rf ${ROOT}/xenadmin-branding/${XC_BRANDING}/* ${XENADMIN_DIR}/Branding/
 fi
 
 # overwrite archive-push.sh and push-latest-successful-build.sh files, if they exist in Branding folder
@@ -96,6 +99,20 @@ if [ -f ${XENADMIN_DIR}/Branding/branding-push-latest-successful-build.sh ]; the
   echo "Overwriting mk/push-latest-successful-build.sh with Branding/branding-push-latest-successful-build.sh."
   cp ${XENADMIN_DIR}/Branding/branding-push-latest-successful-build.sh ${XENADMIN_DIR}/mk/push-latest-successful-build.sh
 fi
+
+run_tests()
+{
+    if [ -n "${REPORT_COVERAGE+x}" ]; then
+        if [ -z "${NCOVER_PROJECT_ID+x}" ]; then
+            echo "FATAL: REPORT_COVERAGE was set, but NCOVER_PROJECT_ID was not"
+            exit 1
+        fi
+        echo "Running tests with coverage because REPORT_COVERAGE declared"
+        source ${XENADMIN_DIR}/mk/tests-checks-cover.sh
+    else
+        source ${XENADMIN_DIR}/mk/tests-checks.sh
+    fi
+}
 
 production_jenkins_build()
 {
@@ -109,7 +126,7 @@ production_jenkins_build()
 	if [ -n "${SKIP_TESTS+x}" ]; then
 		echo "Tests skipped because SKIP_TESTS declared"
 	else
-		source ${XENADMIN_DIR}/mk/tests-checks.sh
+		run_tests
 	fi
     source ${XENADMIN_DIR}/mk/archive-push.sh
 }
@@ -122,7 +139,7 @@ private_jenkins_build()
 	if [ -n "${SKIP_TESTS+x}" ]; then
 		echo "Tests skipped because SKIP_TESTS declared"
 	else
-		source ${XENADMIN_DIR}/mk/tests-checks.sh
+		run_tests
 	fi
 }
 
