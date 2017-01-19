@@ -44,7 +44,10 @@ export NCOVER_BUILD_ID="${BUILD_ID}"
 
 source "$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/tests-checks.sh"
 
-ncover summarize --project="XC Tests"
+net stop ncover || true # Stop ncover to ensure all collection finishes
+net start ncover
+
+ncover summarize --project="XC Tests" --wait
 
 echo "Generating coverage report..."
 ncover report --project="XC Tests" --execution="${BUILD_ID}" --file="$(cygpath -d ${TEST_DIR})\coverage.html" --detail=method
