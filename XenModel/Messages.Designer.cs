@@ -403,7 +403,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Configuring PVS cache.
+        ///   Looks up a localized string similar to Configuring PVS-Accelerator.
         /// </summary>
         public static string ACTION_CONFUGURE_PVS_SITE_DESCRIPTION {
             get {
@@ -421,7 +421,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Configure PVS cache on &apos;{0}&apos;.
+        ///   Looks up a localized string similar to Configure PVS-Accelerator on &apos;{0}&apos;.
         /// </summary>
         public static string ACTION_CONFUGURE_PVS_SITE_TITLE {
             get {
@@ -475,7 +475,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deleting PVS cache configuration.
+        ///   Looks up a localized string similar to Deleting cache configuration.
         /// </summary>
         public static string ACTION_DELETE_PVS_SITE_DESCRIPTION {
             get {
@@ -493,7 +493,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deleting PVS cache configuration on &apos;{0}&apos;.
+        ///   Looks up a localized string similar to Deleting cache configuration on &apos;{0}&apos;.
         /// </summary>
         public static string ACTION_DELETE_PVS_SITE_TITLE {
             get {
@@ -574,7 +574,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable PVS read caching.
+        ///   Looks up a localized string similar to Disable PVS-Accelerator.
         /// </summary>
         public static string ACTION_DISABLE_PVS_READ_CACHING {
             get {
@@ -583,7 +583,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disabling PVS read caching for VM &apos;{0}&apos;.
+        ///   Looks up a localized string similar to Disabling PVS-Accelerator for VM &apos;{0}&apos;.
         /// </summary>
         public static string ACTION_DISABLE_PVS_READ_CACHING_FOR {
             get {
@@ -610,7 +610,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disabled PVS read caching for selected VMs.
+        ///   Looks up a localized string similar to Disabled PVS-Accelerator for selected VMs.
         /// </summary>
         public static string ACTION_DISABLED_PVS_READ_CACHING {
             get {
@@ -628,7 +628,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disabling PVS read caching for selected VMs.
+        ///   Looks up a localized string similar to Disabling PVS-Accelerator for selected VMs.
         /// </summary>
         public static string ACTION_DISABLING_PVS_READ_CACHING {
             get {
@@ -934,7 +934,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable PVS read caching.
+        ///   Looks up a localized string similar to Enable PVS-Accelerator.
         /// </summary>
         public static string ACTION_ENABLE_PVS_READ_CACHING {
             get {
@@ -943,7 +943,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enabling PVS read caching for VM &apos;{0}&apos; on &apos;{1}&apos;.
+        ///   Looks up a localized string similar to Enabling PVS-Accelerator for VM &apos;{0}&apos; on &apos;{1}&apos;.
         /// </summary>
         public static string ACTION_ENABLE_PVS_READ_CACHING_FOR {
             get {
@@ -970,7 +970,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enabled PVS read caching for selected VMs.
+        ///   Looks up a localized string similar to Enabled PVS-Accelerator for selected VMs.
         /// </summary>
         public static string ACTION_ENABLED_PVS_READ_CACHING {
             get {
@@ -988,7 +988,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enabling PVS read caching for selected VMs.
+        ///   Looks up a localized string similar to Enabling PVS-Accelerator for selected VMs.
         /// </summary>
         public static string ACTION_ENABLING_PVS_READ_CACHING {
             get {
@@ -3747,7 +3747,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter your fully qualified AD domain name, and a username and password with sufficient privileges to add servers to your domain..
+        ///   Looks up a localized string similar to Enter your fully qualified AD domain name, and a user name and password with sufficient privileges to add servers to your domain..
         /// </summary>
         public static string AD_JOIN_DOMAIN_BLURB_SHORT {
             get {
@@ -3756,7 +3756,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter your fully qualified AD domain name, and a username and password with sufficient privileges to add servers to your domain..
+        ///   Looks up a localized string similar to Enter your fully qualified AD domain name, and a user name and password with sufficient privileges to add servers to your domain..
         /// </summary>
         public static string AD_JOIN_DOMAIN_BLURB_SHORT_HOST {
             get {
@@ -4244,7 +4244,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Incorrect username and/or password..
+        ///   Looks up a localized string similar to Incorrect user name and/or password..
         /// </summary>
         public static string ADD_NEW_INCORRECT {
             get {
@@ -4673,7 +4673,8 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The total read and write throughput of {0} on storage repository &apos;{1}&apos; has been {2} for the last {3}. This alarm is set to be triggered when the total throughput exceeds {4}..
+        ///   Looks up a localized string similar to The total read and write throughput of {0} on storage repository &apos;{1}&apos; has been {2} for the last {3}.
+        ///This alarm is set to be triggered when the total throughput exceeds {4}..
         /// </summary>
         public static string ALERT_ALARM_STORAGE_DESCRIPTION {
             get {
@@ -7309,7 +7310,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to delete &apos;{0}&apos;? This configuration is in use by PVS..
+        ///   Looks up a localized string similar to Are you sure you want to delete &apos;{0}&apos;? This configuration is in use by PVS-Accelerator..
         /// </summary>
         public static string CONFIRM_DELETE_PVS_SITE_IN_USE {
             get {
@@ -8057,7 +8058,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter your username and password to connect to this server..
+        ///   Looks up a localized string similar to Enter your user name and password to connect to this server..
         /// </summary>
         public static string CONNECT_TO_SERVER_BLURB {
             get {
@@ -9804,7 +9805,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Username and password check complete.
+        ///   Looks up a localized string similar to User name and password check complete.
         /// </summary>
         public static string CREDENTIALS_CHECK_COMPLETE {
             get {
@@ -9813,7 +9814,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Checking username and password....
+        ///   Looks up a localized string similar to Checking user name and password....
         /// </summary>
         public static string CREDENTIALS_CHECKING {
             get {
@@ -10065,7 +10066,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PVS Cache.
+        ///   Looks up a localized string similar to PVS-Accelerator.
         /// </summary>
         public static string DATATYPE_PVS {
             get {
@@ -11143,7 +11144,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Disable PVS Read Caching.
+        ///   Looks up a localized string similar to &amp;Disable PVS-Accelerator.
         /// </summary>
         public static string DISABLE_PVS_READ_CACHING_BUTTON {
             get {
@@ -11152,7 +11153,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable P&amp;VS Read Caching.
+        ///   Looks up a localized string similar to Disable P&amp;VS-Accelerator.
         /// </summary>
         public static string DISABLE_PVS_READ_CACHING_MENU {
             get {
@@ -13433,7 +13434,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E&amp;nable PVS Read Caching....
+        ///   Looks up a localized string similar to E&amp;nable PVS-Accelerator....
         /// </summary>
         public static string ENABLE_PVS_READ_CACHING_BUTTON {
             get {
@@ -13442,7 +13443,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ena&amp;ble PVS Read Caching....
+        ///   Looks up a localized string similar to Ena&amp;ble PVS-Accelerator....
         /// </summary>
         public static string ENABLE_PVS_READ_CACHING_MENU {
             get {
@@ -13676,7 +13677,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Username and Password mismatch..
+        ///   Looks up a localized string similar to User name and password mismatch..
         /// </summary>
         public static string ERROR_AUTHENTICATION {
             get {
@@ -17032,7 +17033,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid username or password. Please try again..
+        ///   Looks up a localized string similar to Invalid user name or password. Please try again..
         /// </summary>
         public static string HEALTH_CHECK_AUTHENTICATION_INVALID_CREDENTIALS {
             get {
@@ -19487,7 +19488,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter a username and password with sufficient privileges to add servers to domain &apos;{0}&apos;..
+        ///   Looks up a localized string similar to Please enter a user name and password with sufficient privileges to add servers to domain &apos;{0}&apos;..
         /// </summary>
         public static string JOINING_AD {
             get {
@@ -19577,7 +19578,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter a username and password with sufficient privileges to remove your machine account from AD. Authentication will be disabled even if the machine account cannot be removed..
+        ///   Looks up a localized string similar to Enter a user name and password with sufficient privileges to remove your machine account from AD. Authentication will be disabled even if the machine account cannot be removed..
         /// </summary>
         public static string LEAVING_AD {
             get {
@@ -23651,7 +23652,7 @@ namespace XenAdmin {
         ///
         ///As SMB storage repositories are shared, the virtual disks stored in them allow VMs to be started on any server in a resource pool and to be migrated between them using Live Migration.
         ///
-        ///When you configure a SMB storage repository, you simply provide the hostname or IP address of the SMB server, the username, the password and the path to a directory that will be  [rest of string was truncated]&quot;;.
+        ///When you configure a SMB storage repository, you simply provide the hostname or IP address of the SMB server, the user name, the password and the path to a directory that will be [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NEWSR_CIFS_BLURB {
             get {
@@ -25617,9 +25618,9 @@ namespace XenAdmin {
         /// <summary>
         ///   Looks up a localized string similar to VMs on local disk will prevent disk repartitioning.
         ///
-        ///A new disk partitioning scheme is available in [XenServer] [BRANDING_VERSION_7_0] that includes larger dom0 and backup partitions, and dedicated partitions for logging, swap and UEFI.
+        ///A new disk partitioning scheme is available in [XenServer] [BRANDING_VERSION_7_0] and above that includes larger dom0 and backup partitions, and dedicated partitions for logging, swap and UEFI.
         ///
-        ///However, there are VMs on local storage, so the current partitioning scheme will be retained. To benefit from repartitioning on upgrade to [XenServer] [BRANDING_VERSION_7_0], VMs must be moved from local storage first..
+        ///However, there are VMs on local storage, so the current partitioning scheme will be retained. To benefit from repartitioning on upgrade to [XenServer] [BRANDING_VERSION_7_0] or above, VMs must be moved from local storage first..
         /// </summary>
         public static string NOT_SAFE_TO_UPGRADE_DEFAULT_WARNING_LONG {
             get {
@@ -25639,7 +25640,7 @@ namespace XenAdmin {
         /// <summary>
         ///   Looks up a localized string similar to The disk size of the local storage prevents repartitioning.
         ///
-        ///A new disk partitioning scheme is available in [XenServer] [BRANDING_VERSION_7_0] that includes larger dom0 and backup partitions, and dedicated partitions for logging, swap and UEFI.
+        ///A new disk partitioning scheme is available in [XenServer] [BRANDING_VERSION_7_0] and above that includes larger dom0 and backup partitions, and dedicated partitions for logging, swap and UEFI.
         ///
         ///However, there is not enough space to perform the repartitioning, so the current partitioning scheme will be retained..
         /// </summary>
@@ -26907,7 +26908,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select one or more pools or standalone hosts that you want to have updated.
+        ///   Looks up a localized string similar to Select one or more pools or standalone servers that you want to have updated.
         ///Greyed out servers cannot be updated with automated updates..
         /// </summary>
         public static string PATCHINGWIZARD_SELECTSERVERPAGE_RUBRIC_AUTOMATED_MODE {
@@ -26917,12 +26918,22 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select one or more servers from the list of available servers.
-        ///Servers where the selected update cannot be applied appear disabled in this list..
+        ///   Looks up a localized string similar to Select one or more servers where you want to apply the selected update.
+        ///Servers where this update cannot be applied appear disabled in this list..
         /// </summary>
         public static string PATCHINGWIZARD_SELECTSERVERPAGE_RUBRIC_DEFAULT {
             get {
                 return ResourceManager.GetString("PATCHINGWIZARD_SELECTSERVERPAGE_RUBRIC_DEFAULT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select one or more pools or standalone servers where you want to apply the selected update.
+        ///Servers where this update cannot be applied appear disabled in this list..
+        /// </summary>
+        public static string PATCHINGWIZARD_SELECTSERVERPAGE_RUBRIC_POOL_SELECTION {
+            get {
+                return ResourceManager.GetString("PATCHINGWIZARD_SELECTSERVERPAGE_RUBRIC_POOL_SELECTION", resourceCulture);
             }
         }
         
@@ -28113,7 +28124,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PVS Cache Configuration - &apos;{0}&apos;.
+        ///   Looks up a localized string similar to PVS-Accelerator configuration - &apos;{0}&apos;.
         /// </summary>
         public static string PVS_CACHE_CONFIG_DIALOG_TITLE {
             get {
@@ -28194,7 +28205,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This PVS cache configuration cannot be removed because there are VMs that are streamed from this site..
+        ///   Looks up a localized string similar to This cache configuration cannot be removed because there are VMs that are streamed from this site..
         /// </summary>
         public static string PVS_SITE_CANNOT_BE_REMOVED {
             get {
@@ -28221,7 +28232,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PVS Read Cache.
+        ///   Looks up a localized string similar to PVS-Accelerator.
         /// </summary>
         public static string PVS_TAB_TITLE {
             get {
@@ -31040,7 +31051,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Try again using a correct Username and Password..
+        ///   Looks up a localized string similar to Try again using a correct user name and password..
         /// </summary>
         public static string SOLUTION_AUTHENTICATION {
             get {
