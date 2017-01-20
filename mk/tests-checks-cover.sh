@@ -44,9 +44,6 @@ export NCOVER_BUILD_ID="${BUILD_ID}"
 
 source "$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/tests-checks.sh"
 
-net stop ncover || true # Stop ncover to ensure all collection finishes
-net start ncover
-
 ncover summarize --project="XC Tests" --wait
 
 echo "Generating coverage report..."
