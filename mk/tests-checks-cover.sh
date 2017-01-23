@@ -46,6 +46,9 @@ source "$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/tests-checks.sh"
 
 ncover summarize --project="XC Tests" --wait
 
+echo "Aggregating NCover project to ensure accurate report..."
+ncover aggregate --project="XC Tests" --execution="${BUILD_ID}"
+
 echo "Generating coverage report..."
 ncover report --project="XC Tests" --execution="${BUILD_ID}" --file="$(cygpath -d ${TEST_DIR})\coverage.html" --detail=method
 
