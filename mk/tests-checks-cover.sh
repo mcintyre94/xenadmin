@@ -46,6 +46,9 @@ source "$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/tests-checks.sh"
 
 ncover summarize --project="XC Tests" --wait
 
+echo "Verifying and repairing ncover data (ncover bug workaround)"
+ncover verify --project="XC Tests" --buildid="${BUILD_ID}" --repair
+
 echo "Generating coverage report..."
 ncover report --project="XC Tests" --execution="${BUILD_ID}" --file="$(cygpath -d ${TEST_DIR})\coverage.html" --detail=method
 
